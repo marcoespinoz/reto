@@ -3,20 +3,18 @@ pipeline {
    agent {
        dockerfile true
    }
-   
-   def mvnHome = tool 'M3'
 
    stage('Checkout Code') { 
       git 'https://github.com/maping/java-maven-calculator-web-app.git'
    }
    stage('JUnit Test') {
       
-      sh "'${mvnHome}/bin/mvn' clean test"
+      sh "mvn clean test"
   
    }
    stage('Integration Test') {
       
-      sh "'${mvnHome}/bin/mvn' integration-test"
+      sh "mvn integration-test"
       
    }
  /*
@@ -30,7 +28,7 @@ pipeline {
   */
   stage('Performance Test') {
      
-     sh "'${mvnHome}/bin/mvn' verify"
+     sh "mvn verify"
      
    }
    stage('Deploy') {
