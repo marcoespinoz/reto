@@ -1,4 +1,7 @@
 node {
+   agent {
+       dockerfile true
+   }
    def mvnHome = tool 'M3'
 
    stage('Checkout Code') { 
@@ -33,6 +36,10 @@ node {
            input message: 'Deploy this web app to production ?'
       }
       echo 'Deploy...'
+   }
+   
+   stage('Build') {
+      sh 'docker build -t calculator .'
    }
 }
    
