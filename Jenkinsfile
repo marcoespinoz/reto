@@ -7,7 +7,7 @@ pipeline {
     stages {
        stage('JUnit Test') {
             steps {
-                sh 'mvn clean test'
+                sh 'mvn clean'
             }
         }
         stage('Integration Test') {
