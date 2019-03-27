@@ -1,7 +1,8 @@
-agent {
+
+pipeline {
+   agent {
        dockerfile true
    }
-node {
    
    def mvnHome = tool 'M3'
 
