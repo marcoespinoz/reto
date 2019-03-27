@@ -1,7 +1,8 @@
 pipeline {
-   def mvnHome = tool 'M3'
+   
    agent {
        dockerfile true
+      
    }
     stages {
        stage('JUnit Test') {
