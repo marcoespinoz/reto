@@ -1,7 +1,8 @@
-node {
-   agent {
+agent {
        dockerfile true
    }
+node {
+   
    def mvnHome = tool 'M3'
 
    stage('Checkout Code') { 
